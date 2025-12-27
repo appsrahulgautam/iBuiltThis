@@ -23,6 +23,8 @@ export default function Header() {
     }
   };
 
+  getLoginStatus();
+
   return (
     <div className="flex flex-row  font-outfit p-4 sticky top-0 z-100 bg-ba ckground/50 backdrop-blur justify-between items-center">
       <Logo />
