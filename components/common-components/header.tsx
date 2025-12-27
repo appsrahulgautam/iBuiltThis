@@ -9,10 +9,19 @@ import {
   UserButton,
   SignedIn,
 } from "@clerk/nextjs";
-import { Suspense } from "react";
+import { Suspense, useState } from "react";
+import { auth } from "@clerk/nextjs/server";
 
 export default function Header() {
-  const isSignedIn = true;
+  const [loginstatus, setLoginstatus] = useState(false);
+  const getLoginStatus = async () => {
+    const { userId } = await auth();
+    if (!userId) {
+      setLoginstatus(false);
+    } else {
+      setLoginstatus(true);
+    }
+  };
 
   return (
     <div className="flex flex-row  font-outfit p-4 sticky top-0 z-100 bg-ba ckground/50 backdrop-blur justify-between items-center">
@@ -30,7 +39,7 @@ export default function Header() {
         </Link>
       </div>
       {/* //TODO CHECK IF USER SIGNED IN */}
-      {isSignedIn ? (
+      {loginstatus ? (
         <Suspense fallback={<div>Laoding...</div>}>
           <div className="flex justify-center items-center gap-4">
             <SignedIn>
