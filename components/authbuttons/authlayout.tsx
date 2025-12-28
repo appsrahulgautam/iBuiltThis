@@ -3,7 +3,6 @@ import { useSession, signIn, signOut } from "next-auth/react";
 import Link from "next/link";
 import { Button } from "../ui/button";
 import { Sparkles } from "lucide-react";
-import { redirect } from "next/navigation";
 
 export default function AuthButton() {
   const { data: session } = useSession();
@@ -15,7 +14,7 @@ export default function AuthButton() {
         <p>User ID: {session.user.id}</p> */}
 
         <div className="flex gap-4">
-          <Link href={"/submit"}>
+          <Link className="hidden sm:block" href={"/submit"}>
             <Button
               className="animation_popup_style hover:bg-primary"
               variant={"default"}
