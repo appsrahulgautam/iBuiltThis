@@ -56,7 +56,7 @@ export function ItemHeaderDemo() {
   return (
     <div className="flex w-full flex-col gap-6 mt-10">
       <h2>This website uses following tech stack - </h2>
-      <ItemGroup className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+      <ItemGroup className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 2xl:grid-cols-10  gap-4">
         {models.map((model) => (
           <Item
             key={model.name}
