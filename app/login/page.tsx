@@ -4,16 +4,15 @@ import { signIn } from "next-auth/react";
 
 export default function LoginPage() {
   return (
-    <div className="min-h-screen w-full flex items-center justify-center bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-pink-100 via-white to-pink-50">
+    <div className="min-h-screen w-full flex items-center justify-center ">
       {/* Soft Card */}
-      <div className="w-full max-w-md p-10 mx-4 bg-white/80 backdrop-blur-md border border-pink-100 rounded-[2.5rem] shadow-[0_20px_50px_rgba(255,182,193,0.2)]">
+      <div className="w-full max-w-md p-10 mx-4 backdrop-blur-md border bg-[#E8E5D5] rounded-[2.5rem] shadow-[0_20px_50px_rgba(255,182,193,0.2)]">
         {/* Logo / Icon Area */}
         <div className="flex flex-col items-center mb-8">
           <Logo />
           <h1 className="text-3xl font-bold text-gray-800 tracking-tight mt-10">
             Welcome to iBuiltThis
           </h1>
-        
         </div>
 
         {/* Action Button */}
@@ -42,14 +41,9 @@ export default function LoginPage() {
           </svg>
           Continue with Google
         </button>
+      </div>
 
       
-      </div>
-
-      {/* Decorative Elements */}
-      <div className="absolute bottom-10 right-10 text-pink-200/50 font-black text-9xl select-none -z-10">
-        PINK
-      </div>
     </div>
   );
 }
