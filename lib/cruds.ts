@@ -98,14 +98,14 @@ export async function submitProject(
     return {
       success: false,
       error: "Not logged in",
-      message: "You need to re-login.",
+      message: "Session not found",
     };
   }
   if (!session.user) {
     return {
       success: false,
       error: "Not logged in",
-      message: "You need to re-login.",
+      message: "User not found",
     };
   }
 
@@ -113,11 +113,12 @@ export async function submitProject(
     return {
       success: false,
       error: "Not logged in",
-      message: "You need to re-login.",
+      message: "User id not found",
     };
   }
 
-  const userId  = session.user.id;
+  const userId = session.user.id;
+  console.log("User id is " +userId);
 
   try {
     console.log(formdata.get("name"));
@@ -164,10 +165,11 @@ export async function submitProject(
       errors: undefined,
     };
   } catch (error) {
+    console.log(error)
     return {
       success: false,
-      error: "Not logged in",
-      message: "You need to re-login.",
+      error: "Errors found in your data",
+      message: "Some errors are found in your data entered. Retry please.",
     };
   }
 }
@@ -176,7 +178,7 @@ export async function upvoteCount(productId: number, VoteCount: number) {
   await connection();
 
   try {
-     const session = await getServerSession(authOptions);
+    const session = await getServerSession(authOptions);
 
     if (!session) {
       return {
@@ -200,7 +202,6 @@ export async function upvoteCount(productId: number, VoteCount: number) {
         message: "You need to re-login.",
       };
     }
-
 
     await db
       .update(products)
@@ -232,7 +233,7 @@ export async function downvoteCount(productId: number, VoteCount: number) {
   await connection();
 
   try {
-     const session = await getServerSession(authOptions);
+    const session = await getServerSession(authOptions);
 
     if (!session) {
       return {
@@ -256,7 +257,6 @@ export async function downvoteCount(productId: number, VoteCount: number) {
         message: "You need to re-login.",
       };
     }
-
 
     await db
       .update(products)
