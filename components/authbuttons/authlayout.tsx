@@ -3,7 +3,7 @@ import { useSession, signIn, signOut } from "next-auth/react";
 import Link from "next/link";
 import { Button } from "../ui/button";
 import { Sparkles } from "lucide-react";
-import { redirect } from 'next/navigation';
+import { redirect } from "next/navigation";
 
 export default function AuthButton() {
   const { data: session } = useSession();
@@ -24,7 +24,7 @@ export default function AuthButton() {
               <Sparkles /> Submit Project
             </Button>
           </Link>
-          <button onClick={() => signOut()}>Sign out</button>
+          <button onClick={() => signOut()}>Sign Out</button>
         </div>
       </>
     );
@@ -32,8 +32,8 @@ export default function AuthButton() {
   return (
     <>
       <div className="flex gap-4">
-        <Button className="animation_popup_style" onClick={() => signIn()}>
-          Sign in
+        <Button className="animation_popup_style " onClick={() => signIn()}>
+          Sign In
         </Button>
       </div>
     </>

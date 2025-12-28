@@ -2,7 +2,7 @@ import { Compass, Home } from "lucide-react";
 import Link from "next/link";
 import { Button } from "../ui/button";
 import Logo from "./logo";
-import AuthButtons from "../onlyauth/authlayout";
+import AuthButtons from "../authbuttons/authlayout";
 
 export default function Header() {
 
