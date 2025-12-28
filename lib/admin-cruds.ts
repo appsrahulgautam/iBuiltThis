@@ -4,7 +4,7 @@ import { db } from "@/db";
 import { products } from "@/db/schema";
 import { desc, eq } from "drizzle-orm";
 import { revalidatePath } from "next/cache";
-import { ProductType } from "./types";
+import { ProductType } from "./types/types";
 
 export async function getAllProducts() {
   "use cache";

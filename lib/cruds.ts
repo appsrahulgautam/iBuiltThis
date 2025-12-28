@@ -4,10 +4,11 @@ import { db } from "@/db";
 import { products } from "@/db/schema";
 import { desc, eq, ilike } from "drizzle-orm";
 import { connection } from "next/server";
-import { MyFormState } from "./types";
-import { auth, currentUser } from "@clerk/nextjs/server";
+import { MyFormState } from "./types/types";
 import { zodValidationsForProducts } from "./zod-validations";
 import { revalidatePath } from "next/cache";
+import { getServerSession } from "next-auth/next";
+import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 
 export async function getAllProductswithFilteration({
   searchText,
@@ -90,30 +91,35 @@ export async function submitProject(
   await connection();
 
   //todo step 1 ->
-  //todo lets get the user id from clerk and check if its authenticated
-  const { userId, orgId } = await auth();
+  //todo lets get the user id from our own auth system and check if its authenticated
+  const session = await getServerSession(authOptions);
 
-  if (!userId) {
+  if (!session) {
     return {
       success: false,
       error: "Not logged in",
       message: "You need to re-login.",
     };
   }
-  if (!orgId) {
+  if (!session.user) {
     return {
       success: false,
-      message: "You must be a member of an organization to submit a product",
-      errors: undefined,
+      error: "Not logged in",
+      message: "You need to re-login.",
     };
   }
 
-  const currentuser_clerk = await currentUser();
-  const userEmailAddress =
-    currentuser_clerk?.primaryEmailAddress?.emailAddress || "anonymous";
+  if (!session.user.id) {
+    return {
+      success: false,
+      error: "Not logged in",
+      message: "You need to re-login.",
+    };
+  }
+
+  const userId  = session.user.id;
 
   try {
-    console.log({ userId });
     console.log(formdata.get("name"));
 
     //todo step 2 ->
@@ -147,8 +153,8 @@ export async function submitProject(
       websiteurl,
       tags: tags,
       status: "pending",
-      submittedBy: userEmailAddress,
-      organizationId: orgId,
+      submittedBy: userId,
+      organizationId: userId,
       userId,
     });
 
@@ -170,23 +176,31 @@ export async function upvoteCount(productId: number, VoteCount: number) {
   await connection();
 
   try {
-    const { userId, orgId } = await auth();
+     const session = await getServerSession(authOptions);
 
-    if (!userId) {
+    if (!session) {
       return {
         success: false,
-        message: "You are not logged in. Please re-login",
-        error: "You are not logged in. Please re-login",
+        error: "Not logged in",
+        message: "You need to re-login.",
+      };
+    }
+    if (!session.user) {
+      return {
+        success: false,
+        error: "Not logged in",
+        message: "You need to re-login.",
       };
     }
 
-    if (!orgId) {
+    if (!session.user.id) {
       return {
         success: false,
-        message: "You are not logged in. Please re-login",
-        error: "You are not logged in. Please re-login",
+        error: "Not logged in",
+        message: "You need to re-login.",
       };
     }
+
 
     await db
       .update(products)
@@ -218,23 +232,31 @@ export async function downvoteCount(productId: number, VoteCount: number) {
   await connection();
 
   try {
-    const { userId, orgId } = await auth();
+     const session = await getServerSession(authOptions);
 
-    if (!userId) {
+    if (!session) {
       return {
         success: false,
-        message: "You are not logged in. Please re-login",
-        error: "You are not logged in. Please re-login",
+        error: "Not logged in",
+        message: "You need to re-login.",
+      };
+    }
+    if (!session.user) {
+      return {
+        success: false,
+        error: "Not logged in",
+        message: "You need to re-login.",
       };
     }
 
-    if (!orgId) {
+    if (!session.user.id) {
       return {
         success: false,
-        message: "You are not logged in. Please re-login",
-        error: "You are not logged in. Please re-login",
+        error: "Not logged in",
+        message: "You need to re-login.",
       };
     }
+
 
     await db
       .update(products)

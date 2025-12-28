@@ -5,7 +5,7 @@ import { FormField } from "@/components/common-components/textinput";
 import { Button } from "@/components/ui/button";
 import { Sparkle, SparkleIcon } from "lucide-react";
 import { useActionState } from "react";
-import { MyFormState } from "@/lib/types";
+import { MyFormState } from "@/lib/types/types";
 import { submitProject } from "@/lib/cruds";
 import { cn } from "@/lib/utils";
 

@@ -1,6 +1,7 @@
 import { products } from "@/db/schema";
 import { InferSelectModel } from "drizzle-orm";
 
+
 export type MyFormState = {
   success: boolean;
   error?: string;
@@ -9,3 +10,4 @@ export type MyFormState = {
 
 
 export type ProductType = InferSelectModel<typeof products>;
+

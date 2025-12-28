@@ -3,8 +3,8 @@ import { Outfit, Roboto } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/common-components/header";
 import Footer from "@/components/common-components/footer";
-import { ClerkProvider } from "@clerk/nextjs";
-import { Suspense } from 'react';
+import { Suspense } from "react";
+import SessionWrapper from "./SessionWrapper";
 
 const outfit = Outfit({
   variable: "--font-outfit",
@@ -26,9 +26,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    // todo added everything in clerk auth
+    // todo added everything in nextauth
     <Suspense fallback={<div>loading..</div>}>
-      <ClerkProvider>
+      <SessionWrapper>
         <html lang="en">
           <body
             className={`${outfit.variable} ${roboto} antialiased  font-outfit`}
@@ -38,7 +38,7 @@ export default function RootLayout({
             <Footer />
           </body>
         </html>
-      </ClerkProvider>
+      </SessionWrapper>
     </Suspense>
   );
 }

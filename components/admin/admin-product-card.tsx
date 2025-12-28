@@ -3,7 +3,7 @@ import { Badge } from "../ui/badge";
 import { Button } from "../ui/button";
 import { Card, CardDescription, CardFooter, CardTitle } from "../ui/card";
 import { cn } from "@/lib/utils";
-import { ProductType } from "@/lib/types";
+import { ProductType } from "@/lib/types/types";
 import AdminActions from "./admin-actios";
 
 export default function AdminProductCard({
@@ -35,7 +35,11 @@ export default function AdminProductCard({
             {product.tagline}
             <div className="flex items-center gap-2">
               {product.tags?.map((tag) => (
-                <Badge className="bg-blue text-black font-light text-sm" variant="default" key={tag}>
+                <Badge
+                  className="bg-blue text-black font-light text-sm"
+                  variant="default"
+                  key={tag}
+                >
                   {tag}
                 </Badge>
               ))}

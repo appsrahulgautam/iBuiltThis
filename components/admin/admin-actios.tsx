@@ -1,9 +1,8 @@
 "use client";
 import { CheckCircleIcon, XCircleIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { ProductType } from "@/lib/types";
+import { ProductType } from "@/lib/types/types";
 import { approveProductAction, rejectProductAction } from "@/lib/admin-cruds";
-
 
 export default function AdminActions({
   status,
