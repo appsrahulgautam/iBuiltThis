@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/common-components/header";
 import Footer from "@/components/common-components/footer";
 import SessionWrapper from "./SessionWrapper";
+import { Suspense } from "react";
 
 const outfit = Outfit({
   variable: "--font-outfit",
@@ -26,16 +27,18 @@ export default function RootLayout({
 }>) {
   return (
     // todo added everything in nextauth
-    <SessionWrapper>
-      <html lang="en">
-        <body
-          className={`${outfit.variable} ${roboto} antialiased  font-outfit`}
-        >
-          <Header />
-          {children}
-          <Footer />
-        </body>
-      </html>
-    </SessionWrapper>
+    <Suspense fallback={<div>Loading...</div>}>
+      <SessionWrapper>
+        <html lang="en">
+          <body
+            className={`${outfit.variable} ${roboto} antialiased  font-outfit`}
+          >
+            <Header />
+            {children}
+            <Footer />
+          </body>
+        </html>
+      </SessionWrapper>
+    </Suspense>
   );
 }
