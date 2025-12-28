@@ -15,9 +15,8 @@ export default function AuthButton() {
         <p>User ID: {session.user.id}</p> */}
 
         <div className="flex gap-4">
-          <Link href={""}>
+          <Link href={"/submit"}>
             <Button
-              onClick={() => redirect("/submit")}
               className="animation_popup_style hover:bg-primary"
               variant={"default"}
             >
