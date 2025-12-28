@@ -3,8 +3,7 @@ import { Outfit, Roboto } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/common-components/header";
 import Footer from "@/components/common-components/footer";
-import { Suspense } from "react";
-import SessionWrapper from "./sessionwrapper";
+import SessionWrapper from "./SessionWrapper";
 
 const outfit = Outfit({
   variable: "--font-outfit",
