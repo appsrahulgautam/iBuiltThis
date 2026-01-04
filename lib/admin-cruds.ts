@@ -6,6 +6,8 @@ import { desc, eq } from "drizzle-orm";
 import { revalidatePath } from "next/cache";
 import { ProductType } from "./types/types";
 
+// * 
+
 export async function getAllProducts() {
   "use cache";
   const productsData = await db
