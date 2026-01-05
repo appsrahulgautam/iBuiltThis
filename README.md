@@ -3,7 +3,7 @@
 <!-- 🚀 CTA BUTTONS -->
 <p align="center">
   <a href="https://your-live-site.vercel.app">
-    <img src="https://img.shields.io/badge/🚀_View_Live_Website-FFA500?style=for-the-badge&logo=vercel&logoColor=black" />
+    <img src="https://img.shields.io/badge/🚀_View_Live_Website-407709?style=for-the-badge&logo=vercel&logoColor=black" />
   </a>
   &nbsp;&nbsp;
   <a href="https://your-admin-panel.vercel.app">
