@@ -148,20 +148,8 @@ It includes a **public product discovery website** and a **secure admin dashboar
 
 <!-- 🌊 Animated Footer -->
 <p align="center">
-  <svg width="100%" height="160" viewBox="0 0 1440 320" preserveAspectRatio="none">
-    <path fill="#020024">
-      <animate attributeName="d" dur="6s" repeatCount="indefinite"
-        values="
-        M0,160 C240,120 480,200 720,180 960,160 1200,120 1440,160 L1440,320 L0,320 Z;
-        M0,180 C240,200 480,120 720,140 960,160 1200,200 1440,180 L1440,320 L0,320 Z;
-        M0,160 C240,120 480,200 720,180 960,160 1200,120 1440,160 L1440,320 L0,320 Z
-        " />
-    </path>
-  </svg>
 
-  <br/>
-
-  <b>⭐ Star this repo if you love building in public</b>
+  <b>⭐ Star this repo if you love building in public</b><br/>
   <b>Made with love by Rahul Gautam</b>
 
 </p>
