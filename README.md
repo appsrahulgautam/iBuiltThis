@@ -149,7 +149,7 @@ It includes a **public product discovery website** and a **secure admin dashboar
 <!-- 🌊 Animated Footer -->
 <p align="center">
 
-  <b>⭐ Star this repo if you love building in public</b><br/>
+  <b>⭐ Star this repo if you love building in public</b><br/><br/><br/>
   <b>Made with love by Rahul Gautam</b>
 
 </p>
