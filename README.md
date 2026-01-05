@@ -2,11 +2,11 @@
 
 <!-- 🚀 CTA BUTTONS -->
 <p align="center">
-  <a href="https://your-live-site.vercel.app">
+  <a href="https://ibuiltthis-rahulgautam.vercel.app/">
     <img src="https://img.shields.io/badge/🚀_View_Live_Website-407709?style=for-the-badge&logo=vercel&logoColor=black" />
   </a>
   &nbsp;&nbsp;
-  <a href="https://your-admin-panel.vercel.app">
+  <a href="https://ibuiltthis-rahulgautam.vercel.app/admin">
     <img src="https://img.shields.io/badge/🛠️_View_Admin_Panel-ff00ea?style=for-the-badge&logo=vercel&logoColor=white" />
   </a>
 </p>
