@@ -1,63 +1,9 @@
-<!-- 🌊 Animated Wave Header -->
-<p align="center">
-  <svg width="100%" height="220" viewBox="0 0 1440 320" preserveAspectRatio="none">
-    <defs>
-      <linearGradient id="waveGrad" gradientTransform="rotate(90)">
-        <stop offset="0%" stop-color="#020024">
-          <animate attributeName="stop-color" values="#020024;#090979;#00d4ff;#020024" dur="8s" repeatCount="indefinite"/>
-        </stop>
-        <stop offset="100%" stop-color="#00d4ff">
-          <animate attributeName="stop-color" values="#00d4ff;#020024;#090979;#00d4ff" dur="8s" repeatCount="indefinite"/>
-        </stop>
-      </linearGradient>
-    </defs>
-
-    <path fill="url(#waveGrad)">
-      <animate attributeName="d" dur="6s" repeatCount="indefinite"
-        values="
-        M0,160 C240,240 480,80 720,120 960,160 1200,240 1440,160 L1440,0 L0,0 Z;
-        M0,120 C240,80 480,200 720,160 960,120 1200,80 1440,120 L1440,0 L0,0 Z;
-        M0,160 C240,240 480,80 720,120 960,160 1200,240 1440,160 L1440,0 L0,0 Z
-        " />
-    </path>
-  </svg>
-</p>
-
-<!-- 🔥 Neon Glow Animated Title -->
-<div align="center">
-
-<svg width="100%" height="120" viewBox="0 0 900 120">
-  <defs>
-    <linearGradient id="neonGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#00f0ff"/>
-      <stop offset="50%" stop-color="#ff00ea"/>
-      <stop offset="100%" stop-color="#00f0ff"/>
-    </linearGradient>
-
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
-      <feMerge>
-        <feMergeNode in="coloredBlur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
-  </defs>
-
-  <text x="50%" y="65%" text-anchor="middle"
-        font-size="56"
-        font-weight="800"
-        fill="url(#neonGrad)"
-        filter="url(#glow)">
-    iBuiltThis
-  </text>
-</svg>
-
 ### ✨ A Community Platform for Builders, Indie Hackers & Creators
 
 <!-- 🚀 CTA BUTTONS -->
 <p align="center">
   <a href="https://your-live-site.vercel.app">
-    <img src="https://img.shields.io/badge/🚀_View_Live_Website-00d4ff?style=for-the-badge&logo=vercel&logoColor=black" />
+    <img src="https://img.shields.io/badge/🚀_View_Live_Website-FFA500?style=for-the-badge&logo=vercel&logoColor=black" />
   </a>
   &nbsp;&nbsp;
   <a href="https://your-admin-panel.vercel.app">
@@ -145,37 +91,52 @@ It includes a **public product discovery website** and a **secure admin dashboar
 
 <div align="center">
 
+### 🏠 Landing Page
+**Browse apps, SaaS products, and AI tools built by creators**
+
+<img src="./public/screenshots/s1.png" width="90%" alt="Explore Page" />
+
+---
+
+
+### 🏠 Featured products
+**Featured products**
+
+<img src="./public/screenshots/s2.png" width="90%" alt="Explore Page" />
+
+---
+
 ### 🏠 Explore Products
 **Browse apps, SaaS products, and AI tools built by creators**
 
-<img src="./public/screenshots/home.png" width="90%" alt="Explore Page" />
+<img src="./public/screenshots/s3.png" width="90%" alt="Explore Page" />
 
 ---
 
 ### ➕ Submit a Product
 **Creators can submit and manage their projects**
 
-<img src="./public/screenshots/submit.png" width="90%" alt="Submit Product" />
+<img src="./public/screenshots/s4.png" width="90%" alt="Submit Product" />
 
 ---
 
 ### 📦 Product Details
 **Detailed product page with creator information**
 
-<img src="./public/screenshots/product.png" width="90%" alt="Product Page" />
+<img src="./public/screenshots/s6.png" width="90%" alt="Product Page" />
 
 ---
 
 ### 🧑‍💼 Admin Dashboard
 **Moderate, approve, and manage submissions**
 
-<img src="./public/screenshots/admin.png" width="90%" alt="Admin Panel" />
+<img src="./public/screenshots/s5.png" width="90%" alt="Admin Panel" />
 
 </div>
 
 ---
 
-## 💼 Portfolio / Upwork Value
+## 💼 Portfolio 
 
 ✔ Demonstrates full-stack SaaS architecture  
 ✔ Real-world admin & user workflows  
